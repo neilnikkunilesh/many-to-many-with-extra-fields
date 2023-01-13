@@ -22,3 +22,6 @@ KEY fk_publisher (publisher_id),
 CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES book (id),
 CONSTRAINT fk_publisher FOREIGN KEY (publisher_id) REFERENCES publisher (id)
 );
+
+
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
