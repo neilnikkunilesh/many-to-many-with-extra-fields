@@ -25,3 +25,19 @@ CONSTRAINT fk_publisher FOREIGN KEY (publisher_id) REFERENCES publisher (id)
 
 
 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
+
+
+## OneToMany or ManyToOne realtionshinp code for JPA
+
+@Entity
+public class Item {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_order")
+    private PurchaseOrder order;
+ 
+@Entity
+public class PurchaseOrder {
+    @OneToMany(mappedBy = "order")
+    private List<Item> items = new ArrayList<Item>();
+ 
+}
